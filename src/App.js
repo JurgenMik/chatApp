@@ -14,40 +14,64 @@ function App() {
 
   return (
       <div className="w-full h-screen grid grid-cols-3 overflow-hidden">
-        <div className="bg-slate-700 h-full w-2/3 sm:w-1/3">
+        <div className="bg-gray-800 h-full sm:w-40 lg:w-60 mr-5 sm:mr-0">
           <div className="flex justify-center pt-8 w-full">
-              <h1 className="sm:text-lg text-sm text-white font-bold">Contacts</h1>
+              <h1 className="sm:text-xl text-white">Contacts</h1>
           </div>
-          <div className="h-full w-full grid grid-cols-1 pt-12">
+          <div className="h-full w-full grid grid-cols-1 pt-12 overflow-hidden">
             <div className="flex justify-center">
                 <Badge badgeContent="" overlap="circular" color="success">
                     <Avatar alt="Madis" onClick={TargetName} src={require("./assets/profPic1.jpg")} sx={{
-                        height: '125px',
-                        width: '125px',
+                        height: {
+                            xs: 75,
+                            sm: 135,
+                        },
+                        width: {
+                            xs: 75,
+                            sm: 135,
+                        }
                     }}/>
                 </Badge>
             </div>
-            <div className="flex justify-center -mt-8">
+            <div className="flex justify-center -mt-24">
                 <Badge badgeContent="" overlap="circular" color="success">
                     <Avatar alt="Kalle" onClick={TargetName} src={require("./assets/profPic3.jpg")} sx={{
-                        height: '125px',
-                        width: '125px'
+                        height: {
+                            xs: 75,
+                            sm: 135,
+                        },
+                        width: {
+                            xs: 75,
+                            sm: 135,
+                        }
                     }}/>
                 </Badge>
             </div>
-            <div className="flex justify-center -mt-8">
+            <div className="flex justify-center -mt-24">
                 <Badge badgeContent="" overlap="circular" color="success">
                     <Avatar alt="Laura" onClick={TargetName} src={require("./assets/profPic2.jpg")} sx={{
-                        height: '125px',
-                        width: '125px'
+                        height: {
+                            xs: 75,
+                            sm: 135,
+                        },
+                        width: {
+                            xs: 75,
+                            sm: 135,
+                        }
                     }}/>
                 </Badge>
             </div>
-            <div className="flex justify-center -mt-8">
+            <div className="flex justify-center -mt-24">
               <Badge badgeContent="" overlap="circular" color="warning">
                   <Avatar alt="Kadri" src={require("./assets/profPic4.jpg")} sx={{
-                      height: '125px',
-                      width: '125px'
+                      height: {
+                          xs: 75,
+                          sm: 135,
+                      },
+                      width: {
+                          xs: 75,
+                          sm: 135,
+                      }
                   }}/>
               </Badge>
             </div>
