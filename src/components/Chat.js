@@ -15,14 +15,13 @@ function Chat({profileName}){
                     <TextField multiline maxRows={1} placeholder="Enter Message.." sx={{
                         width: '100%',
                         padding: '1rem',
-                        color: 'black',
                     }}/>
                 </div>
             </div>
              <div className="h-4/5">
-                 <h1> </h1>
+                 <ChatMessages/>
              </div>
-             <div className="sm:pt-60 pt-40 sm:float-right">
+             <div className="pt-40 xl:pt-44 sm:float-right">
                  <Button variant="contained" size="large" endIcon={<SendIcon />}>
                      Send
                  </Button>
