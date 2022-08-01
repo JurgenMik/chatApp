@@ -1,6 +1,6 @@
 import './App.css';
 import Chat from './components/Chat'
-import {useState} from "react"
+import { useState } from "react"
 import Avatar from '@mui/material/Avatar'
 import Badge from '@mui/material/Badge'
 
@@ -14,7 +14,7 @@ function App() {
 
   return (
       <div className="w-full h-screen grid grid-cols-3 overflow-hidden">
-        <div className="bg-gray-800 h-full sm:w-40 lg:w-60 mr-5 sm:mr-0">
+        <div className="bg-gray-800 h-full sm:w-40 mr-5 sm:mr-0">
           <div className="flex justify-center pt-8 w-full">
               <h1 className="sm:text-xl text-white">Contacts</h1>
           </div>
@@ -24,11 +24,11 @@ function App() {
                     <Avatar alt="Madis" onClick={TargetName} src={require("./assets/profPic1.jpg")} sx={{
                         height: {
                             xs: 75,
-                            sm: 135,
+                            sm: 125,
                         },
                         width: {
                             xs: 75,
-                            sm: 135,
+                            sm: 125,
                         }
                     }}/>
                 </Badge>
@@ -38,11 +38,11 @@ function App() {
                     <Avatar alt="Kalle" onClick={TargetName} src={require("./assets/profPic3.jpg")} sx={{
                         height: {
                             xs: 75,
-                            sm: 135,
+                            sm: 125,
                         },
                         width: {
                             xs: 75,
-                            sm: 135,
+                            sm: 125,
                         }
                     }}/>
                 </Badge>
@@ -52,11 +52,11 @@ function App() {
                     <Avatar alt="Laura" onClick={TargetName} src={require("./assets/profPic2.jpg")} sx={{
                         height: {
                             xs: 75,
-                            sm: 135,
+                            sm: 125,
                         },
                         width: {
                             xs: 75,
-                            sm: 135,
+                            sm: 125,
                         }
                     }}/>
                 </Badge>
@@ -66,11 +66,11 @@ function App() {
                   <Avatar alt="Kadri" src={require("./assets/profPic4.jpg")} sx={{
                       height: {
                           xs: 75,
-                          sm: 135,
+                          sm: 125,
                       },
                       width: {
                           xs: 75,
-                          sm: 135,
+                          sm: 125,
                       }
                   }}/>
               </Badge>
