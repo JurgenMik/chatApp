@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
 
-function Chat({profileName, onClick}) {
+function Chat({profileName}) {
 
     const [message, setMessage] = useState('');
     const [view, setView] = useState([]);
@@ -17,6 +17,7 @@ function Chat({profileName, onClick}) {
 
     const SendMessage = () => {
         setView(view.concat({message}));
+        setMessage('');
         document.getElementById('input').value = '';
     };
 
