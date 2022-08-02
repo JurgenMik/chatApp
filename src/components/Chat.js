@@ -22,7 +22,7 @@ function Chat({profileName}) {
     };
 
     const RemoveAlert = () => {
-        setValidate('');
+        setValidate("");
     }
 
     return(
@@ -41,7 +41,7 @@ function Chat({profileName}) {
                     <h1>{profileName}</h1>
                 </div>
                 <div className="bg-white text-white col-span-2 pt-4">
-                    <TextField multiline id="input" maxRows={1} placeholder="Enter Message.." onChange={e => setMessage(e.target.value)} sx={{
+                    <TextField multiline id="input" maxRows={1} placeholder="Enter Message.." onChange={e => validation !== 'Notify' ? setMessage(e.target.value) : document.getElementById('input').value = ''} sx={{
                         width: '100%',
                         padding: '1rem',
                     }}/>
