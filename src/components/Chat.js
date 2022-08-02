@@ -22,7 +22,7 @@ function Chat({profileName}) {
     };
 
     const RemoveAlert = () => {
-        setValidate("");
+        setValidate('');
     }
 
     return(
@@ -47,7 +47,7 @@ function Chat({profileName}) {
                     }}/>
                 </div>
             </div>
-             <div className="h-4/5 overflow-scroll overflow-x-hidden">
+             <div className="h-4/5 ml-5 overflow-scroll overflow-x-hidden">
                  {view.map((val, key) => {
                      return(
                         <ChatMessages key={key} message={val.message}/>

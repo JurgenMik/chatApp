@@ -10,7 +10,7 @@ function ValidationNotification() {
                 Message should not be <strong>empty</strong> — or contain more than <strong>25 words</strong>
             </Alert>
         </div>
-    )
-};
+    );
+}
 
 export default ValidationNotification;
