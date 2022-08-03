@@ -6,8 +6,8 @@ function ValidationNotification() {
 
     return(
         <div className="w-full absolute flex justify-center mt-6 z-20">
-            <Alert severity="info"><AlertTitle>Info</AlertTitle>
-                Message should not be <strong>empty</strong> — or contain more than <strong>25 words</strong>
+            <Alert severity="warning"><AlertTitle>Warning</AlertTitle>
+                Message should not contain any <strong>slurs or profanities</strong>
             </Alert>
         </div>
     );

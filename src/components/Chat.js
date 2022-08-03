@@ -11,8 +11,16 @@ function Chat({profileName}) {
     const [view, setView] = useState([]);
     const [validation, setValidate] = useState('');
 
+    let swears = [
+        'pisslo',
+        'dogwater',
+        'Pisslo',
+        'Dogwater',
+    ];
+
     const ValidateInput = () => {
-        message.length === 0 || message.length > 25 ? setValidate('Notify') : SendMessage();
+        const searchSwear = swears.includes(message);
+        searchSwear === true ? setValidate('Notify') : SendMessage();
     };
 
     const SendMessage = () => {
@@ -41,7 +49,7 @@ function Chat({profileName}) {
                     <h1>{profileName}</h1>
                 </div>
                 <div className="bg-white text-white col-span-2 pt-4">
-                    <TextField multiline id="input" maxRows={1} placeholder="Enter Message.." onChange={e => validation !== 'Notify' ? setMessage(e.target.value) : document.getElementById('input').value = ''} sx={{
+                    <TextField multiline id="input" maxRows={1} placeholder="Enter Message.." onChange={e => setMessage(e.target.value)} sx={{
                         width: '100%',
                         padding: '1rem',
                     }}/>
