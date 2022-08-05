@@ -1,6 +1,6 @@
 
 
-function ChatMessages({message}) {
+function ChatMessages({message, time}) {
     return(
         <div className="bg-white sm:text-lg sm:w-auto w-1/2 sm:h-auto h-16 inline-block rounded-lg relative top-5 float-left clear-left mb-3">
             <div className="ml-2">
@@ -11,7 +11,7 @@ function ChatMessages({message}) {
                 </div>
                 <div className="w-full h-1/4 text-xs align-bottom sm:pb-1 mt-4">
                     <p className="font-bold float-right justify-center mr-2">
-                        00:51
+                        {time}
                     </p>
                 </div>
             </div>

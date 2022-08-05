@@ -7,30 +7,39 @@ import Button from '@mui/material/Button';
 
 function Chat({profileName}) {
 
-    const [message, setMessage] = useState('');
     const [view, setView] = useState([]);
+    const [constructMessage, setMessage] = useState([{
+        message: '',
+        time: null,
+    }])
     const [validation, setValidate] = useState('');
 
     let swears = [
-        'pisslo',
-        'dogwater',
         'Pisslo',
         'Dogwater',
+        'pisslo',
+        'dogwater',
     ];
 
     const ValidateInput = () => {
-        const searchSwear = swears.includes(message);
-        searchSwear === true ? setValidate('Notify') : SendMessage();
+        const searchSwear = swears.includes(constructMessage.message);
+        searchSwear === true ?
+            setValidate('Notify') : GetTimeOfMessage();
     };
 
     const SendMessage = () => {
-        setView(view.concat({message}));
-        setMessage('');
+        setView(view.concat({constructMessage}));
         document.getElementById('input').value = '';
     };
 
     const RemoveAlert = () => {
         setValidate('');
+    }
+
+    const GetTimeOfMessage = () => {
+        const date = new Date();
+        setMessage({...constructMessage, time : date.getHours() + ':' + date.getMinutes()});
+        SendMessage();
     }
 
     return(
@@ -49,16 +58,16 @@ function Chat({profileName}) {
                     <h1>{profileName}</h1>
                 </div>
                 <div className="bg-white text-white col-span-2 pt-4">
-                    <TextField multiline id="input" maxRows={1} placeholder="Enter Message.." onChange={e => setMessage(e.target.value)} sx={{
+                    <TextField multiline id="input" maxRows={1} placeholder="Enter Message.." onChange={e => setMessage({...constructMessage, message : e.target.value})} sx={{
                         width: '100%',
                         padding: '1rem',
                     }}/>
                 </div>
             </div>
              <div className="h-4/5 ml-5 overflow-scroll overflow-x-hidden">
-                 {view.map((val, key) => {
+                 {view.map(({constructMessage}, key) => {
                      return(
-                        <ChatMessages key={key} message={val.message}/>
+                        <ChatMessages message={constructMessage.message} time={constructMessage.time} key={key}/>
                      )
                  })}
              </div>
