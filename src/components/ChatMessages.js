@@ -2,10 +2,10 @@
 
 function ChatMessages({message, time}) {
     return(
-        <div className="bg-white sm:text-lg sm:w-auto w-1/2 sm:h-auto h-16 inline-block rounded-lg relative top-5 float-left clear-left mb-3">
+        <div className="bg-white sm:text-lg sm:w-auto w-1/2 sm:h-auto h-auto inline-block rounded-lg relative top-5 float-left clear-left mb-3">
             <div className="ml-2">
                 <div className="mr-1 mt-1">
-                    <p className="text-sky-600 sm:text-lg text-md">
+                    <p className="text-sky-600 sm:text-lg text-md ">
                         {message}
                     </p>
                 </div>
