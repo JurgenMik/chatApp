@@ -1,13 +1,11 @@
 # Chat Application
 Fullstack solution [Node (express) Server](https://github.com/JurgenMik/chatApp_server) to minimal function chat application.
 ## Table of Contents
-___
-* ###Overview
-  * ####Functionality
-  * ####Screenshots
-  * ####Built with
+* <strong>Overview</strong>
+  * <strong>Functionality</strong>
+  * <strong>Screenshots</strong>
+  * <strong>Built with</strong>
 ##Overview
-___
 ### App. Functionalities
 * Responsive*
 * After selecting, display name of the profile in the UI
@@ -17,16 +15,13 @@ ___
 * Continue messaging only after the notification has been closed
 * Ability to swap between profiles -- and communicate <strong>separately</strong> by only displaying messages with that individual
 * Continue to display previous messages after refreshing the browser
-
 ### Screenshots
-
 ![img.png](img.png)
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
-
 ## Built With
-* ###React - JS library
-* ###TailwindCSS - CSS framework
-* ###MongoDB
+* <strong>React - JS library</strong>
+* <strong>TailwindCSS - CSS framework</strong>
+* <strong>MongoDB</strong>
 
 
