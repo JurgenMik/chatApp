@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import ChatMessages from './ChatMessages';
 import ValidationNotification from './validation/validationNotification';
 import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
+import axios from 'axios';
 import Button from '@mui/material/Button';
 
 function Chat({profileName}) {
@@ -13,13 +14,21 @@ function Chat({profileName}) {
         time: null,
     }])
     const [validation, setValidate] = useState('');
-
+    
     let swears = [
         'Pisslo',
         'Dogwater',
         'pisslo',
         'dogwater',
     ];
+
+    useEffect(() => {
+        setTimeout(() => {
+            axios.get('http://localhost:3002/recieve/' + profileName).then((response) => {
+                setView(response.data); 
+        })
+        }, 250);
+    });
 
     const ValidateInput = () => {
         const searchSwear = swears.includes(constructMessage.message);
@@ -28,19 +37,23 @@ function Chat({profileName}) {
     };
 
     const SendMessage = () => {
-        setView(view.concat({constructMessage}));
+        axios.post('http://localhost:3002/send/' + profileName,
+            {
+                message: constructMessage.message,
+                time: constructMessage.time,
+            });
         document.getElementById('input').value = '';
     };
 
     const RemoveAlert = () => {
         setValidate('');
-    }
+    };
 
     const GetTimeOfMessage = () => {
         const date = new Date();
         setMessage({...constructMessage, time : date.getHours() + ':' + date.getMinutes()});
         SendMessage();
-    }
+    };
 
     return(
          <div className="bg-gray-300 w-3/4 h-3/5 mt-16 rounded-lg relative">
@@ -65,9 +78,9 @@ function Chat({profileName}) {
                 </div>
             </div>
              <div className="h-4/5 ml-5 overflow-scroll overflow-x-hidden">
-                 {view.map(({constructMessage}, key) => {
+                 {view.map(({messageContent, timeOfMessage}, key) => {
                      return(
-                        <ChatMessages message={constructMessage.message} time={constructMessage.time} key={key}/>
+                        <ChatMessages message={messageContent} time={timeOfMessage} key={key}/>
                      )
                  })}
              </div>

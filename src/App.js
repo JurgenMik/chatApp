@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Chat from './components/Chat'
 import { useState } from "react"
@@ -81,11 +82,11 @@ function App() {
             {(() => {
                 switch(name) {
                     case 'Madis':
-                        return <Chat profileName='Madis'/>;
+                        return <Chat profileName={name}/>;
                     case 'Kalle':
-                        return <Chat profileName='Kalle'/>;
+                        return <Chat profileName={name}/>;
                     case 'Laura':
-                        return <Chat profileName='Laura'/>;
+                        return <Chat profileName={name}/>;
                     default:
                         return <h1 className="font-bold pt-4">Click on a profile to begin chatting..</h1>
                 }
